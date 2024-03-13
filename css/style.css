@@ -1,0 +1,152 @@
+/* General */
+*{
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(rgb(52, 232, 158), rgb(15, 52, 67));
+}
+
+/* Container */
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid #fff(255, 255, 255, 0.3);
+    padding: 40px 60px;
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* controls */
+.controls{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+button{
+    background-color: black;
+    border-radius: 20px;
+    padding: 0px 20px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover{
+    background-color: #fff;
+    color: black;
+}
+
+.disabled {
+    color: #757575;
+}
+
+.stats{
+    color: #fff;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+/* board container */
+.board-container{
+    position: relative;
+}
+
+.board .win{
+    border-radius: 5px;
+    box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
+    background: #000;
+    transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    backface-visibility: hidden;
+}
+
+.board{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 20px;
+}
+/*
+.board-container.flipped 
+.board{
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+
+
+.board-.board-container.flipped 
+.win{
+    transform: rotateY(0) rotateZ(0);
+}*/
+
+/* card */
+.card{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.card-front, .card-back{
+    position: absolute;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    transition: transofrm .6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    backface-visibility: hidden;
+}
+
+.card-back{
+    transform: rotateY(180deg) rotateZ(50deg);
+    font-size: 2em;
+    user-select: none;
+    text-align: center;
+    line-height: 100px;
+    background-color: #fff;
+}
+
+/*
+.card.flipped .card-front{
+    transform: rotateY(180deg) rotateZ(50deg);
+}
+
+.card.flipped .card-back{
+    transform: rotateY(0) rotateZ(0);
+}*/
+
+/* win */
+.win {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: #FDF8E6;
+
+}
+.win-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 21pt;
+    color: #282A3A;
+}
+.highlight {
+    color: #7303c0;
+}
